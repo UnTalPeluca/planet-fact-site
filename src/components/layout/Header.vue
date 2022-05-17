@@ -63,7 +63,7 @@ export default {
     watch(
       () => store.currentPlanet,
       () => {
-        localStorage.setItem('lastPlanet', store.currentPlanet)
+        localStorage.setItem("lastPlanet", store.currentPlanet);
       }
     );
 
@@ -123,6 +123,7 @@ export default {
           display: block;
           visibility: visible;
           opacity: 1;
+          pointer-events: auto;
         }
       }
       .dropdown__menu {
@@ -130,12 +131,13 @@ export default {
         opacity: 0;
         z-index: 1000;
         position: absolute;
+        pointer-events: none;
         left: 50%;
         top: 100%;
         transform: translateX(-50%);
         width: 100%;
         background-color: $bg-primary;
-        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);;
+        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
         .menu__planets {
           position: relative;
           .planets__item {
