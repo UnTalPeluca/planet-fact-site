@@ -1,0 +1,16 @@
+$heights: (
+  mercury: 40%,
+  venus: 56%,
+  earth: 63%,
+  mars: 47%,
+  jupiter: 82%,
+  saturn: 93%,
+  uranus: 64%,
+  neptune: 63%,
+);
+
+@each $key, $val in $heights {
+    .height-#{$key} {
+      max-height: $val;
+    }
+}

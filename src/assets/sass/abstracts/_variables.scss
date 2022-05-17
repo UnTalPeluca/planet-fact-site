@@ -1,0 +1,49 @@
+/* Colors */
+
+$text-primary: #ffffff;
+$text-secundary: rgba(255, 255, 255, 0.5);
+$bg-primary: #070724;
+$bg-hover: #38384f;
+$planets: (
+  mercury: #419ebb,
+  venus: #eda249,
+  earth: #6d2ed5,
+  mars: #d14c32,
+  jupiter: #d83a34,
+  saturn: #cd5120,
+  uranus: #1ec1a2,
+  neptune: #2d68f0,
+);
+$border: 1px solid rgba(255, 255, 255, 0.2);
+$border-alt: 1px solid rgba(255, 255, 255, 0.1);
+
+/* Typography */
+
+$antonio: "Antonio";
+$spartan: "Spartan";
+$text: (
+  xs: 8px,
+  sm: 9px,
+  base: 11px,
+  md: 12px,
+  lg: 14px,
+  xl: 20px,
+  2xl: 24px,
+  3xl: 28px,
+  4xl: 40px,
+  5xl: 48px,
+  6xl: 80px,
+);
+
+// Breakpoints
+
+$breakpoints: (
+  sm: 375px,
+  md: 768px,
+  lg: 1200px,
+);
+$device-width: (
+  sm: clamp(327px, 80vw, 690px),
+  md: clamp(690px, 80vw, 1110px),
+  lg: 1110px,
+);

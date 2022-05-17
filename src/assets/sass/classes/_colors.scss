@@ -1,0 +1,66 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+// Borders
+@each $key, $val in variables.$planets {
+  .border-top-#{$key} {
+    box-shadow: inset 0px 4px 0px 0px $val;
+  }
+  .border-bottom-#{$key} {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 4px;
+      background-color: $val;
+      left: 0;
+      bottom: 2px;
+      opacity: 1;
+      transition: opacity 200ms ease-in-out;
+      @include mixins.respond(md){ 
+        display: none;
+      }
+    }
+  }
+  .hover-border-top-#{$key} {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 4px;
+      background-color: $val;
+      top: -16px;
+      left: 0;
+      opacity: 0;
+      transition: opacity 200ms ease-in-out;
+    }
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@each $key, $val in variables.$planets {
+  .bg-#{$key} {
+    @include mixins.respond(md) {
+      background-color: $val;
+    }
+  }
+}
+@each $key, $val in variables.$planets {
+  .marker-#{$key} {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: $val;
+      border-radius: 50%;
+    }
+  }
+}

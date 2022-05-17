@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: $text-primary;
+}
+
+h1 {
+  @include mixins.h1;
+}
+h2 {
+  @include mixins.h2;
+}
+h3 {
+  @include mixins.h3;
+}
+h4 {
+  @include mixins.h4;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+
+.container {
+  width: map-get($device-width, sm);
+  margin: auto;
+  @include mixins.respond(md) {
+    width: map-get($device-width, md);
+  }
+  @include mixins.respond(lg) {
+    width: map-get($device-width, lg);
+  }
+}

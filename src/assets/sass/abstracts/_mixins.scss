@@ -1,0 +1,41 @@
+@use "variables" as *;
+
+// Typography
+@mixin h1 {
+  font-family: $antonio;
+  font-weight: 500;
+  letter-spacing: -1.05px;
+  font-size: map-get($text, 3xl);
+}
+@mixin h2 {
+  font-family: $antonio;
+  font-weight: 500;
+}
+@mixin h3 {
+  font-family: $spartan;
+  font-weight: bold;
+}
+@mixin h4 {
+  font-family: $spartan;
+  font-weight: bold;
+}
+@mixin planet-item {
+  font-family: $spartan;
+  font-weight: bold !important;
+  letter-spacing: 1.35px;
+}
+//Breakpoints
+@mixin respond($breakpoint) {
+  @if $breakpoint==md {
+    @media only screen and (min-width: map-get($breakpoints, md)) {
+      @content;
+    }
+  }
+  @if $breakpoint==lg {
+    @media only screen and (min-width: map-get($breakpoints, lg)) {
+      @content;
+    }
+  }
+}
+
+// Font size
