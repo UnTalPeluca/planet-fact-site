@@ -5,7 +5,7 @@ export const planetsStore = defineStore("planets", {
   state: () => ({
     currentPlanet: localStorage.getItem("lastPlanet")
       ? JSON.parse(localStorage.getItem("lastPlanet"))
-      : 0,
+      : 2,
     currentSection: "overview",
     planets: data,
   }),
